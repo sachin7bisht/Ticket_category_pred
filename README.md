@@ -7,6 +7,12 @@ This Repository is detailed Case Study about Ticket Prediction:
 
 
 EDA
+
+
 Preprocessing
+
+
 Vectorization/Feature Extraction
+
+
 Modeling
