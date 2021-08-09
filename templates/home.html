@@ -1,0 +1,193 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket_Category_Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" rel="stylesheet">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/style.css">
+
+
+</head>
+
+<body>
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+<!--                <a class="navbar-brand" href="/"><center>Ticket Prediction</center></a>-->
+                <a class="navbar-brand" href="/"><h1 style="text-align:center">&#6158;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ticket Category Prediction</h1></a>
+<!--                <p><h1 style="text-align:center"> title</h1></p>-->
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+    <div class="container">
+        <form action="\predict" method="post">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Category</h5>
+
+                            <select name="category" id="category" required="required">
+                                <option value="category_0">category 0</option>
+                                <option value="category_1">category 1</option>
+                                <option value="category_2">category 2</option>
+                                <option value="category_3">category 3</option>
+                                <option value="category_4">category 4</option>
+                                <option value="category_5">category 5</option>
+                                <option value="category_6">category 6</option>
+                                <option value="category_7">category 7</option>
+                                <option value="category_8">category 8</option>
+                                <option value="category_9">category 9</option>
+                                <option value="category_10">category 10</option>
+                                <option value="category_11">category 11</option>
+                                <option value="category_12">category 12</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Sub Category</h5>
+                            <!-- Destination -->
+                            <select name="sub_category" id="sub_category" required="required">
+                                <option value="sub_category_1">sub category 0-9</option>
+                                <option value="sub_category_2">sub category 10-20</option>
+                                <option value="sub_category_3">sub category 21-30</option>
+                                <option value="sub_category_4">sub category 31-40</option>
+                                <option value="sub_category_5">sub category 41-50</option>
+                                <option value="sub_category_6">sub category 50 and above</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+           <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Impact</h5>
+                            <select name="Impact" id="Impact">
+                                <option value=Impact_0>Impact 0</option>
+                                <option value=Impact_1>Impact 1</option>
+                                <option value=Impact_2>Impact 2</option>
+                                <option value=Impact_3>Impact 3</option>
+                                <option value=Impact_4>Impact 4</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            <br>
+            <br>
+
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Urgency</h5>
+                            <!-- Destination -->
+                            <select name="Urgency" id="Urgency">
+                                <option value=Urgency_0>Urgency 0</option>
+                                <option value=Urgency_1>Urgency 1</option>
+                                <option value=Urgency_2>Urgency 2</option>
+                                <option value=Urgency_3>Urgency 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Title Of Ticket</h5>
+<!--                            <p>Title Of Ticket</p>-->
+                <!-- <input type="text" name="comment"/> -->
+                                <textarea id="title" name="title"  rows="4" cols="50"></textarea>
+                                <br/>
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Body of Ticket</h5>
+
+                                <textarea id="body" name="body"  rows="4" cols="50"></textarea>
+<!--                                <input id="body" name="body" type="text">-->
+
+                                <br/>
+<!--                                 <input type="submit" class="btn-info" value="Submit">-->
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <br>
+            <br>
+
+            <br>
+            <br>
+            <!-- Submit -->
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+
+        <br>
+        <br>
+        <h3>{{Prediction}}</h3>
+
+        <br>
+        <br>
+        <p>©2021 Sachin</p>
+
+    </div>
+
+
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
