@@ -27,3 +27,8 @@ Vectorization/Feature Extraction
 
 
 Modeling
+
+
+local host outpur
+
+https://youtu.be/hrwcpfFKbsI
